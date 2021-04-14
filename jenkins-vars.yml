@@ -2,7 +2,8 @@
 
 # jenkins variables
 project_name: docker-audacity
-external_type: alpine_repo
+external_type: na
+custom_version_command: "curl -sX GET https://api.github.com/repos/audacity/audacity/releases/latest | jq -r '.tag_name' | sed 's|^Audacity-||'"
 release_type: stable
 release_tag: latest
 ls_branch: main
@@ -14,10 +15,7 @@ repo_vars:
   - DOCKERHUB_IMAGE = 'linuxserver/audacity'
   - DEV_DOCKERHUB_IMAGE = 'lsiodev/audacity'
   - PR_DOCKERHUB_IMAGE = 'lspipepr/audacity'
-  - DIST_IMAGE = 'alpine'
-  - DIST_TAG = '3.13'
-  - DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/v3.13/community/'
-  - DIST_REPO_PACKAGES = 'audacity'
+  - DIST_IMAGE = 'ubuntu'
   - MULTIARCH = 'true'
   - CI = 'true'
   - CI_WEB = 'true'

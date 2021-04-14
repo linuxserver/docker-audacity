@@ -1,1 +1,1 @@
-audacity
+LD_LIBRARY_PATH="/usr/local/lib/audacity" audacity
