@@ -14,7 +14,6 @@ RUN \
     libasound2-dev \
     libavformat-dev \
     libgtk2.0-dev \
-    python3-minimal \
     libjack-jackd2-dev && \
   echo "**** build audacity ****" && \
   if [ -z ${AUDACITY_VERSION+x} ]; then \
@@ -30,11 +29,24 @@ RUN \
     /app/audacity --strip-components=1 && \
   cd /app/audacity/build && \
   cmake -DCMAKE_BUILD_TYPE=Release -Daudacity_use_wxwidgets=local -Daudacity_use_ffmpeg=loaded .. && \
-  make -j6 && \
-  make install
+  make -j2 && \
+  make install && \
+  echo "**** cleanup ****" && \
+  apt-get purge --auto-remove -y \
+	build-essential \
+    cmake \
+    curl \
+    gcc \
+    git \
+    libasound2-dev \
+    libavformat-dev \
+    libgtk2.0-dev \
+    libjack-jackd2-dev && \
+  mv /app/audacity/build/bin/Release/locale /app/ && \
+  rm -rf /app/audacity
 
 
-FROM ghcr.io/linuxserver/baseimage-rdesktop-web:arm32v7-focal
+FROM ghcr.io/linuxserver/baseimage-rdesktop-web:focal
 
 # set version label
 ARG BUILD_DATE
@@ -60,7 +72,7 @@ COPY /root /
 COPY --from=buildstage /usr/local/share/audacity /usr/local/share/audacity
 COPY --from=buildstage /usr/local/lib/audacity /usr/local/lib/audacity
 COPY --from=buildstage /usr/local/bin/audacity /usr/local/bin/audacity
-COPY --from=buildstage /app/audacity/build/bin/Release/locale /usr/local/share/locale
+COPY --from=buildstage /app/locale /usr/local/share/locale
 
 # ports and volumes
 EXPOSE 3000
