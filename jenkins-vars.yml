@@ -7,6 +7,7 @@ custom_version_command: "curl -sX GET https://api.github.com/repos/audacity/auda
 release_type: stable
 release_tag: latest
 ls_branch: main
+armhf_native: true
 repo_vars:
   - BUILD_VERSION_ARG = 'AUDACITY_VERSION'
   - LS_USER = 'linuxserver'
