@@ -19,6 +19,7 @@ RUN \
     python3-pip && \
   pip3 install -U pip && \
   pip install conan && \
+  conan user && \
   echo "**** build audacity ****" && \
   if [ -z ${AUDACITY_VERSION+x} ]; then \
     AUDACITY_VERSION=$(curl -sX GET "https://api.github.com/repos/audacity/audacity/releases/latest" \
