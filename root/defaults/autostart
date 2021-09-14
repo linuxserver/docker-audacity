@@ -1,1 +1,1 @@
-LD_LIBRARY_PATH="/usr/local/lib/audacity" audacity
+/app/audacity/audacity --appimage-extract-and-run

@@ -24,7 +24,7 @@ pipeline {
     DEV_DOCKERHUB_IMAGE = 'lsiodev/audacity'
     PR_DOCKERHUB_IMAGE = 'lspipepr/audacity'
     DIST_IMAGE = 'ubuntu'
-    MULTIARCH = 'true'
+    MULTIARCH = 'false'
     CI = 'true'
     CI_WEB = 'true'
     CI_PORT = '3000'

@@ -44,7 +44,7 @@ Find us at:
 
 ## Supported Architectures
 
-Our images support multiple architectures such as `x86-64`, `arm64` and `armhf`. We utilise the docker manifest for multi-platform awareness. More information is available from docker [here](https://github.com/docker/distribution/blob/master/docs/spec/manifest-v2-2.md#manifest-list) and our announcement [here](https://blog.linuxserver.io/2019/02/21/the-lsio-pipeline-project/).
+We utilise the docker manifest for multi-platform awareness. More information is available from docker [here](https://github.com/docker/distribution/blob/master/docs/spec/manifest-v2-2.md#manifest-list) and our announcement [here](https://blog.linuxserver.io/2019/02/21/the-lsio-pipeline-project/).
 
 Simply pulling `ghcr.io/linuxserver/audacity` should retrieve the correct image for your arch, but you can also pull specific arch images via tags.
 
@@ -53,8 +53,6 @@ The architectures supported by this image are:
 | Architecture | Tag |
 | :----: | --- |
 | x86-64 | latest |
-| arm64 | arm64v8-latest |
-| armhf | arm32v7-latest |
 
 ## Application Setup
 
@@ -225,4 +223,5 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **14.09.21:** - Use the official appimage, switch to single arch (x86_64). Armhf and aarch64 users can remain on version 3.0.2 but there won't be further updates.
 * **07.04.21:** - Initial release.
