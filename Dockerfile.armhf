@@ -14,7 +14,11 @@ RUN \
     libasound2-dev \
     libavformat-dev \
     libgtk2.0-dev \
-    libjack-jackd2-dev && \
+    libjack-jackd2-dev \
+    python3-dev \
+    python3-pip && \
+  pip3 install -U pip && \
+  pip install conan && \
   echo "**** build audacity ****" && \
   if [ -z ${AUDACITY_VERSION+x} ]; then \
     AUDACITY_VERSION=$(curl -sX GET "https://api.github.com/repos/audacity/audacity/releases/latest" \
@@ -22,10 +26,10 @@ RUN \
   fi && \
   mkdir -p /app/audacity/build && \
   curl -o \
-    /tmp/audacity.tar.xz -L \
-    "https://github.com/audacity/audacity/releases/download/Audacity-${AUDACITY_VERSION}/audacity-minsrc-${AUDACITY_VERSION}.tar.xz" && \
+    /tmp/audacity.tar.gz -L \
+    "https://github.com/audacity/audacity/archive/refs/tags/Audacity-${AUDACITY_VERSION}.tar.gz" && \
   tar xf \
-    /tmp/audacity.tar.xz -C \
+    /tmp/audacity.tar.gz -C \
     /app/audacity --strip-components=1 && \
   cd /app/audacity/build && \
   cmake -DCMAKE_BUILD_TYPE=Release -Daudacity_use_wxwidgets=local -Daudacity_use_ffmpeg=loaded .. && \
@@ -33,7 +37,7 @@ RUN \
   make install && \
   echo "**** cleanup ****" && \
   apt-get purge --auto-remove -y \
-	build-essential \
+	  build-essential \
     cmake \
     curl \
     gcc \
