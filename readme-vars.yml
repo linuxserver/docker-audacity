@@ -41,5 +41,6 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "13.12.22:", desc: "Rebase to Jammy." }
   - { date: "14.09.21:", desc: "Use the official appimage, switch to single arch (x86_64). Armhf and aarch64 users can remain on version 3.0.2 but there won't be further updates." }
   - { date: "07.04.21:", desc: "Initial release." }
