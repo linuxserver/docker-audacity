@@ -22,7 +22,7 @@ RUN \
   mkdir -p /app/audacity/ && \
   curl -o \
     /app/audacity/audacity -L \
-    "https://github.com/audacity/audacity/releases/download/Audacity-${AUDACITY_VERSION}/audacity-linux-${AUDACITY_VERSION}-x86_64.AppImage" && \
+    "https://github.com/audacity/audacity/releases/download/Audacity-${AUDACITY_VERSION}/audacity-linux-${AUDACITY_VERSION}-x64.AppImage" && \
   chmod +x /app/audacity/audacity && \
   echo "**** cleanup ****" && \
   rm -rf \
