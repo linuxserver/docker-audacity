@@ -227,5 +227,6 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **13.12.22:** - Rebase to Jammy.
 * **14.09.21:** - Use the official appimage, switch to single arch (x86_64). Armhf and aarch64 users can remain on version 3.0.2 but there won't be further updates.
 * **07.04.21:** - Initial release.
