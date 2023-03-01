@@ -203,7 +203,7 @@ libnghttp2-141.43.0-1build3
 libnpth01.6-3build2
 libnsl21.3.0-2build2
 libnspr42:4.32-3build1
-libnss32:3.68.2-0ubuntu1.1
+libnss32:3.68.2-0ubuntu1.2
 libobrender32v53.6.1-10
 libobt2v53.6.1-10
 libogg01.3.5-0ubuntu3
