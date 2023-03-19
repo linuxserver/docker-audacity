@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-rdesktop-web:jammy
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
 
 # set version label
 ARG BUILD_DATE
@@ -8,6 +8,9 @@ ARG VERSION
 ARG AUDACITY_VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="aptalca"
+
+# title
+ENV TITLE=Audacity
 
 RUN \
   echo "**** install build packages ****" && \
