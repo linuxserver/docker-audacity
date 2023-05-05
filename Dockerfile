@@ -34,6 +34,7 @@ RUN \
   ln -s \
     /usr/lib/x86_64-linux-gnu/libportaudio.so.2 \
     /usr/lib/x86_64-linux-gnu/libportaudio.so && \
+  sed -i 's|</applications>|  <application title="Audacity" type="normal">\n    <maximized>yes</maximized>\n  </application>\n</applications>|' /etc/xdg/openbox/rc.xml && \
   echo "**** cleanup ****" && \
   rm -rf \
     /tmp/* \

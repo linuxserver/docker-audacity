@@ -69,6 +69,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "05.05.23:", desc: "Start Audacity in full screen." }
   - { date: "18.03.23:", desc: "Rebase to KasmVNC base image." }
   - { date: "13.12.22:", desc: "Rebase to Jammy." }
   - { date: "14.09.21:", desc: "Use the official appimage, switch to single arch (x86_64). Armhf and aarch64 users can remain on version 3.0.2 but there won't be further updates." }
