@@ -29,7 +29,7 @@ NAME                                                                          VE
 @tufjs/models                                                                 1.0.4                                     npm        
 @types/cookie                                                                 0.4.1                                     npm        
 @types/cors                                                                   2.8.16                                    npm        
-@types/node                                                                   20.9.0                                    npm        
+@types/node                                                                   20.9.1                                    npm        
 PyGObject                                                                     3.42.1                                    python     
 PyJWT                                                                         2.3.0                                     python     
 SecretStorage                                                                 3.3.1                                     python     
@@ -1115,7 +1115,7 @@ libzmq5                                                                       4.
 libzstd1                                                                      1.4.8+dfsg-3build1                        deb        
 libzvbi-common                                                                0.2.35-19                                 deb        
 libzvbi0                                                                      0.2.35-19                                 deb        
-linux-libc-dev                                                                5.15.0-88.98                              deb        
+linux-libc-dev                                                                5.15.0-89.99                              deb        
 locales                                                                       2.35-0ubuntu3.4                           deb        
 login                                                                         1:4.8.1-2ubuntu2.1                        deb        
 logsave                                                                       1.46.5-2ubuntu1.1                         deb        
@@ -1221,7 +1221,7 @@ postcss-selector-parser                                                       6.
 printer-driver-cups-pdf                                                       3.0.1-14                                  deb        
 proc-log                                                                      3.0.0                                     npm        
 process                                                                       0.11.10                                   npm        
-procps                                                                        2:3.3.17-6ubuntu2                         deb        
+procps                                                                        2:3.3.17-6ubuntu2.1                       deb        
 promise-all-reject-late                                                       1.0.1                                     npm        
 promise-call-limit                                                            1.0.2                                     npm        
 promise-inflight                                                              1.0.1                                     npm        
