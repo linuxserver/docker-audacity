@@ -13,6 +13,10 @@ LABEL maintainer="aptalca"
 ENV TITLE=Audacity
 
 RUN \
+  echo "**** add icon ****" && \
+  curl -o \
+    /kclient/public/icon.png \
+    https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/audacity-logo.png && \
   echo "**** install packages ****" && \
   apt-get update && \
   apt-get install -y \
@@ -26,15 +30,16 @@ RUN \
     AUDACITY_VERSION=$(curl -sX GET "https://api.github.com/repos/audacity/audacity/releases/latest" \
     | awk '/tag_name/{print $4;exit}' FS='[""]' | sed 's|^Audacity-||'); \
   fi && \
-  mkdir -p /app/audacity/ && \
+  cd /tmp && \
   curl -o \
-    /app/audacity/audacity -L \
+    /tmp/audacity.app -L \
     "https://github.com/audacity/audacity/releases/download/Audacity-${AUDACITY_VERSION}/audacity-linux-${AUDACITY_VERSION}-x64.AppImage" && \
-  chmod +x /app/audacity/audacity && \
+  chmod +x /tmp/audacity.app && \
+  ./audacity.app --appimage-extract && \
+  mv squashfs-root /opt/audacity && \
   ln -s \
     /usr/lib/x86_64-linux-gnu/libportaudio.so.2 \
     /usr/lib/x86_64-linux-gnu/libportaudio.so && \
-  sed -i 's|</applications>|  <application title="Audacity" type="normal">\n    <maximized>yes</maximized>\n  </application>\n</applications>|' /etc/xdg/openbox/rc.xml && \
   echo "**** cleanup ****" && \
   rm -rf \
     /tmp/* \
