@@ -128,7 +128,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - /path/to/config:/config
+      - /path/to/audacity/config:/config
     ports:
       - 3000:3000
       - 3001:3001
@@ -145,7 +145,7 @@ docker run -d \
   -e TZ=Etc/UTC \
   -p 3000:3000 \
   -p 3001:3001 \
-  -v /path/to/config:/config \
+  -v /path/to/audacity/config:/config \
   --restart unless-stopped \
   lscr.io/linuxserver/audacity:latest
 ```
@@ -324,6 +324,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **19.08.24:** - Rebase to noble.
 * **10.02.24:** - Update Readme with new env vars, ingest proper PWA icon, and pre-extract appimage.
 * **05.05.23:** - Start Audacity in full screen.
 * **18.03.23:** - Rebase to KasmVNC base image.

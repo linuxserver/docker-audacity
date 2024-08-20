@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntunoble
 
 # set version label
 ARG BUILD_DATE
@@ -40,6 +40,7 @@ RUN \
   ln -s \
     /usr/lib/x86_64-linux-gnu/libportaudio.so.2 \
     /usr/lib/x86_64-linux-gnu/libportaudio.so && \
+  printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
   echo "**** cleanup ****" && \
   rm -rf \
     /tmp/* \
