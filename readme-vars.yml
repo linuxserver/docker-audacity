@@ -83,6 +83,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "31.10.24:", desc: "Fix artifact name." }
   - { date: "19.08.24:", desc: "Rebase to noble." }
   - { date: "10.02.24:", desc: "Update Readme with new env vars, ingest proper PWA icon, and pre-extract appimage." }
   - { date: "05.05.23:", desc: "Start Audacity in full screen." }
