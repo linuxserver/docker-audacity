@@ -325,6 +325,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **31.10.24:** - Fix artifact name.
 * **19.08.24:** - Rebase to noble.
 * **10.02.24:** - Update Readme with new env vars, ingest proper PWA icon, and pre-extract appimage.
 * **05.05.23:** - Start Audacity in full screen.
