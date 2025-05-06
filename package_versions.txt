@@ -1076,7 +1076,7 @@ libzmq5                                                                       4.
 libzstd1                                                                      1.5.5+dfsg2-2build1.1                   deb                         
 libzvbi-common                                                                0.2.42-2                                deb                         
 libzvbi0t64                                                                   0.2.42-2                                deb                         
-linux-libc-dev                                                                6.8.0-58.60                             deb                         
+linux-libc-dev                                                                6.8.0-59.61                             deb                         
 locales                                                                       2.39-0ubuntu8.4                         deb                         
 locales-all                                                                   2.39-0ubuntu8.4                         deb                         
 login                                                                         1:4.13+dfsg1-4ubuntu3.2                 deb                         
