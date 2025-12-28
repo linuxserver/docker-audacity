@@ -106,6 +106,7 @@ init_diagram: |
   "audacity:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "28.12.25:", desc: "Add Wayland init logic."}
   - {date: "12.07.25:", desc: "Rebase to Selkies, HTTPS IS NOW REQUIRED."}
   - {date: "31.10.24:", desc: "Fix artifact name."}
   - {date: "19.08.24:", desc: "Rebase to noble."}
