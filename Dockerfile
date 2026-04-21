@@ -10,7 +10,9 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="aptalca"
 
 # title
-ENV TITLE=Audacity
+ENV TITLE=Audacity \
+    NO_GAMEPAD=true \
+    PIXELFLUX_WAYLAND=true
 
 RUN \
   echo "**** add icon ****" && \
