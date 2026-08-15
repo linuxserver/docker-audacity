@@ -30,7 +30,7 @@ RUN \
   echo "**** install audacity ****" && \
   if [ -z ${AUDACITY_VERSION+x} ]; then \
     AUDACITY_VERSION=$(curl -sX GET "https://api.github.com/repos/audacity/audacity/releases/latest" \
-    | awk '/tag_name/{print $4;exit}' FS='[""]' | sed 's|^Audacity-||'); \
+    | jq -r '.tag_name' | sed 's|^Audacity-||'); \
   fi && \
   cd /tmp && \
   curl -o \
