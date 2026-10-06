@@ -43,6 +43,7 @@ RUN \
     /usr/lib/x86_64-linux-gnu/libportaudio.so.2 \
     /usr/lib/x86_64-linux-gnu/libportaudio.so && \
   printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
+  find /opt/audacity -type d -exec chmod 755 {} + && \
   echo "**** cleanup ****" && \
   rm -rf \
     /tmp/* \
